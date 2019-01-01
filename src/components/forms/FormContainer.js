@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import FormComponent from './FormComponent'
 
-export default class FormMain extends React.Component {
+export default class FormContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

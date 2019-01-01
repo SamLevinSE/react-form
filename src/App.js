@@ -9,6 +9,7 @@ import Parent from './components/parentToChild/parent';
 import UserList from './components/list/UserListComponent';
 import CardContainer from './components/cards/CardContainer';
 import StarWarContainer from './components/starWarApi/StarWarContainer';
+import MemeGenContainer from './components/memeGen/MemeGenContainer';
 
 
 class App extends Component {
@@ -44,32 +45,35 @@ class App extends Component {
         return (
             this.state.isLoading ? <Loading/> :
                 <div className="App">
-                    <div>
-                        <CardContainer/>
-                    </div>
-                    <div>
+                    <>
+                        <MemeGenContainer/>
+                    </>
+                    <>
                         <StarWarContainer/>
-                    </div>
-                    <div>
+                    </>
+                    <>
                         <FormContainer/>
-                    </div>
-                    <div>
+                    </>
+                    <>
                         <ToDoList/>
-                    </div>
-                    <div>
+                    </>
+                    <>
                         <Parent title={this.state.title}/>
-                    </div>
-                    <div>
+                    </>
+                    <>
                         <UsersContainer title={<h3>Users List</h3>}/>
-                    </div>
-                    <div>
+                    </>
+                    <>
+                        <CardContainer/>
+                    </>
+                    <>
                         {this.state.user.map((user, index) => {
                             return (<UserList
                                 user={user}
                                 deleteUser={this.deleteUser.bind(this, index)}>
                             </UserList>)
                         })}
-                    </div>
+                    </>
                 </div>
         );
     }

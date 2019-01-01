@@ -3,12 +3,12 @@ import React from 'react';
 
 export default function (props) {
     let firstName, lastName;
-    props.lastName === null ? lastName = ' N/A ' : lastName = props.lastName;
-    props.firstName === '' ? firstName = ' N/A ' : firstName = props.firstName;
+    props.user.lastName === null ? lastName = ' - ' : lastName = props.user.lastName;
+    props.user.firstName === '' ? firstName = ' - ' : firstName = props.user.firstName;
     return (
-        <>
-            <span>First Name: {firstName} | Last Name: {lastName}</span>
+        <li>
             <button onClick={props.deleteUser}>Delete</button>
-        </>
+            <span>Name: {firstName} {lastName}</span>
+        </li>
     )
 }

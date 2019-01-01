@@ -1,8 +1,8 @@
 import React from 'react';
-import User from './User';
+import UserComponent from './UserComponent';
 import UniqueID from "react-html-id";
 
-class Users extends React.Component {
+class UsersContainer extends React.Component {
     constructor(props) {
         super(props);
         UniqueID.enableUniqueIds(this);
@@ -39,7 +39,7 @@ class Users extends React.Component {
                 <div>
                     {this.props.title}
                     {this.state.users.map((user) => {
-                        return <User key={user.name} age={user.age}>{user.name}</User>
+                        return <UserComponent key={user.name} age={user.age}>{user.name}</UserComponent>
                     })
                     }
                     <button onClick={this.ageReducer} className="btn btn-lg">Make the user younger</button>
@@ -49,4 +49,4 @@ class Users extends React.Component {
     }
 }
 
-export default Users;
+export default UsersContainer;

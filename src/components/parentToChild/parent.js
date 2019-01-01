@@ -12,10 +12,10 @@ export default class Parent extends React.Component {
 
     render(props) {
         return (
-            <div>
-                <Child {...this.props} lorem={this.state.lorem}
-                       doSomething={this.doSomething.bind(this, 'Some other dummy text from props')}/>
-            </div>
+            <Child {...this.props}
+                   lorem={this.state.lorem}
+                   doSomething={this.doSomething.bind(this, 'Some other dummy text from props')}
+            />
         )
     }
 }

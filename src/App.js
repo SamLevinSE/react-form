@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import UniqueID from 'react-html-id';
 import './App.css';
 import Loading from './components/loading/Loading';
-import FormMain from './components/forms/FormMain';
+import FormContainer from './components/forms/FormContainer';
 import ToDoList from './components/todo/ToDoList';
-import Users from './components/User/Users';
+import UsersContainer from './components/User/UsersContainer';
 import Parent from './components/parentToChild/parent';
-import UserList from './components/list/userList';
-import Cards from './components/cards/Cards';
-import StarWars from './components/starWarApi/StarWarMain';
+import UserList from './components/list/UserListComponent';
+import CardContainer from './components/cards/CardContainer';
+import StarWarContainer from './components/starWarApi/StarWarContainer';
 
 
 class App extends Component {
@@ -43,29 +43,34 @@ class App extends Component {
     render() {
         return (
             this.state.isLoading ? <Loading/> :
-            <div className="App">
-                <div>
-                    {/*<Users title={<h1>Users List</h1>}/>*/}
-                    {/*<Parent title={this.state.title}/>*/}
-                    {/*<ul>*/}
-                        {/*{this.state.user.map((user, index) => {*/}
-                            {/*return (<div><UserList*/}
-                                {/*key={user.id}*/}
-                                {/*firstName={user.firstName}*/}
-                                {/*lastName={user.lastName}*/}
-                                {/*deleteUser={this.deleteUser.bind(this, index)}>*/}
-                                {/*{user.email}*/}
-                            {/*</UserList></div>)*/}
-                        {/*})}*/}
-                    {/*</ul>*/}
+                <div className="App">
+                    <div>
+                        <CardContainer/>
+                    </div>
+                    <div>
+                        <StarWarContainer/>
+                    </div>
+                    <div>
+                        <FormContainer/>
+                    </div>
+                    <div>
+                        <ToDoList/>
+                    </div>
+                    <div>
+                        <Parent title={this.state.title}/>
+                    </div>
+                    <div>
+                        <UsersContainer title={<h3>Users List</h3>}/>
+                    </div>
+                    <div>
+                        {this.state.user.map((user, index) => {
+                            return (<UserList
+                                user={user}
+                                deleteUser={this.deleteUser.bind(this, index)}>
+                            </UserList>)
+                        })}
+                    </div>
                 </div>
-                <div>
-                    <FormMain/>
-                </div>
-                <div>
-                    <ToDoList/>
-                </div>
-            </div>
         );
     }
 }

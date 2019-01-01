@@ -9,9 +9,11 @@ export default class Cards extends React.Component {
         imgSrc: 'https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg'
     };
 
+    changeFunc = () => {console.log('This has been clicked')};
+
     render() {
         return (
-            <Card data={this.state}/>
+            <Card data={this.state} changeFunc={this.changeFunc.bind(this)}/>
         )
     }
 }

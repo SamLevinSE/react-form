@@ -1,12 +1,8 @@
 import React from 'react';
 import logo from './logo.png'
 
-export default class Loading extends React.Component {
-    state = {
-
-    };
-
-    logo = {
+export default function Loading() {
+    let logoStyle = {
         display: 'flex',
         width: '100px',
         marginLeft: "auto",
@@ -15,10 +11,8 @@ export default class Loading extends React.Component {
         color: "#bfbfbf"
     };
 
-    render() {
-        return (<div>
-            <img src={logo} alt="logo" style={this.logo}/>
-            <p style={this.logo}>Loading...</p>
-        </div>)
-    }
+    return (<div>
+        <img src={logo} alt="logo" style={logoStyle}/>
+        <p style={logoStyle}>Loading...</p>
+    </div>)
 }

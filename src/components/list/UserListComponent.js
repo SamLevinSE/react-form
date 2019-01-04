@@ -7,7 +7,7 @@ export default function (props) {
     props.user.firstName === '' ? firstName = ' - ' : firstName = props.user.firstName;
     return (
         <li>
-            <button onClick={props.deleteUser}>Delete</button>
+            <button onClick={props.deleteUser}>X</button>
             <span>Name: {firstName} {lastName}</span>
         </li>
     )

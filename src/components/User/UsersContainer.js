@@ -35,16 +35,14 @@ class UsersContainer extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    {this.props.title}
-                    {this.state.users.map((user) => {
-                        return <UserComponent key={user.name} age={user.age}>{user.name}</UserComponent>
-                    })
-                    }
-                    <button onClick={this.ageReducer} className="btn btn-lg">Make the user younger</button>
-                    <hr/>
-                </div>
+            <div style={{padding: "10px"}}>
+                {this.props.title}
+                {this.state.users.map((user) => {
+                    return <UserComponent key={user.name} age={user.age}>{user.name}</UserComponent>
+                })
+                }
+                <button onClick={this.ageReducer} className="btn btn-lg">Make the user younger</button>
+                <hr/>
             </div>)
     }
 }

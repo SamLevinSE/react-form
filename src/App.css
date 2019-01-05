@@ -36,6 +36,6 @@ a {
   padding: 5px;
 }
 
-.nav li {
-  color: orange;
+li {
+  padding: 10px;
 }

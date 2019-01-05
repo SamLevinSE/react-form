@@ -6,9 +6,9 @@ export default function (props) {
     props.user.lastName === null ? lastName = ' - ' : lastName = props.user.lastName;
     props.user.firstName === '' ? firstName = ' - ' : firstName = props.user.firstName;
     return (
-        <li>
+        <li style={{padding: "10px"}}>
             <button onClick={props.deleteUser}>X</button>
-            <span>Name: {firstName} {lastName}</span>
+            <span> Name: {firstName} {lastName}</span>
         </li>
     )
 }
